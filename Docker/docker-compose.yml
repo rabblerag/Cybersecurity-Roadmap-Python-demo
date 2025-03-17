@@ -1,0 +1,18 @@
+services:
+  challenge:
+    build:
+      context: .
+      # dockerfile: Dockerfile
+      dockerfile: Dockerfile-socat
+    ports:
+      - "4000:1337"
+    deploy:
+      mode: replicated
+      replicas: 1
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 1G
+    restart: unless-stopped
+    tty: true
+    stdin_open: true
