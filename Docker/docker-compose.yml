@@ -8,8 +8,10 @@ x-deploy-settings: &deploy-settings
 services:
   challenge_01:
     build:
-      context: ./challenges/challenge-01/
+      context: .
       dockerfile: Dockerfile
+      args:
+        CHALLENGE_PATH: challenges/challenge-01
     ports:
       - "4000:1337"
     deploy: *deploy-settings

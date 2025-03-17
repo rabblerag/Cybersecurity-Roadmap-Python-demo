@@ -16,8 +16,11 @@ ENV PORT=$PORT
 RUN useradd -ms /bin/bash user 
 RUN groupadd challenge
 
-COPY ./challenge /usr/src/app/
+# COPY ./challenge /usr/src/app/
 
+# Accept a build argument for the challenge path
+ARG CHALLENGE_PATH
+COPY ./${CHALLENGE_PATH}/challenge /usr/src/app/
 
 # Changing the permissions of specific files to minimize the damage 
 
