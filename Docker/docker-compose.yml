@@ -1,18 +1,18 @@
+x-deploy-settings: &deploy-settings
+  mode: replicated
+  replicas: 1
+  resources:
+    limits:
+      cpus: "0.5"
+      memory: 1G
 services:
-  challenge:
+  challenge_01:
     build:
-      context: .
-      # dockerfile: Dockerfile
-      dockerfile: Dockerfile-socat
+      context: ./challenges/challenge-01/
+      dockerfile: Dockerfile
     ports:
       - "4000:1337"
-    deploy:
-      mode: replicated
-      replicas: 1
-      resources:
-        limits:
-          cpus: "0.5"
-          memory: 1G
+    deploy: *deploy-settings
     restart: unless-stopped
     tty: true
     stdin_open: true
