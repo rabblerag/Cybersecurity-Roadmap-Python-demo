@@ -5,16 +5,32 @@ x-deploy-settings: &deploy-settings
     limits:
       cpus: "0.5"
       memory: 1G
+
+x-build-settings: &build-settings
+  context: .
+  dockerfile: Dockerfile
+
+x-common-settings: &common-settings
+  deploy: *deploy-settings
+  restart: unless-stopped
+  tty: true
+  stdin_open: true
+
 services:
   challenge_01:
+    <<: *common-settings
     build:
-      context: .
-      dockerfile: Dockerfile
+      <<: *build-settings
       args:
         CHALLENGE_PATH: challenges/challenge-01
     ports:
       - "4000:1337"
-    deploy: *deploy-settings
-    restart: unless-stopped
-    tty: true
-    stdin_open: true
+
+  challenge_02:
+    <<: *common-settings
+    build:
+      <<: *build-settings
+      args:
+        CHALLENGE_PATH: challenges/challenge-02
+    ports:
+      - "4012:1337"
