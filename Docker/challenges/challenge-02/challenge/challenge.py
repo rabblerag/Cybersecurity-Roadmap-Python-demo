@@ -8,7 +8,7 @@ class Challenge:
         self.open_flag()
 
     def main(self):
-        print("Hello Challnege 2 ")
+        print("Hello Challenge 2 ")
         print(self.flag)
 
     def open_flag(self):

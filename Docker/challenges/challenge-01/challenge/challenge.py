@@ -8,7 +8,7 @@ class Challenge:
         self.open_flag()
 
     def main(self):
-        print("Hello world")
+        print("You cleared the first stage! Follow the instructions below to connect to the next stage.")
         print(self.flag)
         
 
@@ -16,6 +16,7 @@ class Challenge:
     def open_flag(self):
         with open(Path(self.path, "flag.txt")) as file:
             self.flag = file.read()
+            print(self.flag)
 
 
 if __name__ == "__main__":

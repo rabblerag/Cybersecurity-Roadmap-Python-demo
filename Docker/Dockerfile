@@ -38,5 +38,5 @@ USER user
 # Expose the port the server will run on
 EXPOSE 1337
 
-CMD ["socat", "-v","TCP-LISTEN:1337,reuseaddr,fork", "EXEC:'python3 /usr/src/app/challenge.py',pty,stderr"]
+CMD ["socat", "-v","TCP-LISTEN:1337,reuseaddr,fork", "EXEC:'python3 /usr/src/app/challenge.py',pty,echo=0,stderr"]
 
