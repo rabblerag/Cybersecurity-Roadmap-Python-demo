@@ -42,4 +42,13 @@ services:
       args:
         CHALLENGE_PATH: challenges/challenge-03
     ports:
-      - "4024:1337"
+      - "4075:1337"
+  
+  challenge_04:
+    <<: *common-settings
+    build:
+      <<: *build-settings
+      args:
+        CHALLENGE_PATH: challenges/challenge-04
+    ports:
+      - "4034:1337"
