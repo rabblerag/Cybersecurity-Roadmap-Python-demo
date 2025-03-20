@@ -1,1 +1,1 @@
-Go to port 4012 
+Connect to port 4012 

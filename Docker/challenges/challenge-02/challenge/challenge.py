@@ -31,6 +31,7 @@ class Challenge:
         print("What is the result of", a, '+', b, "?")
         ans = self.timedInput(3)
         if int(ans.strip()) == a+b:
+            print("That's the correct answer! Follow these instructions to move to stage 3")
             print(self.flag)
         elif ans != '-1':
             print("Wrong answer")
