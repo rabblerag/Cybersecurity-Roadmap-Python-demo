@@ -1,0 +1,1 @@
+flag{ctfs_are_hard}

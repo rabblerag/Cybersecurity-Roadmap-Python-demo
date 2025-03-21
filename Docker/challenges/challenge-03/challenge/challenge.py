@@ -20,7 +20,6 @@ class Challenge:
     def challenge(self, pass_len):
         alphabet = digits + 'abcdef'
         password = ''.join([choice(alphabet) for _ in range(pass_len)])
-        print(password)
         
         while True:
             if input().strip() == password:
