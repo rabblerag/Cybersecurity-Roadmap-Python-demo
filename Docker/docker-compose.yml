@@ -41,9 +41,9 @@ services:
       <<: *build-settings
       args:
         CHALLENGE_PATH: challenges/challenge-01
-        CHALLENGE_PORT: 4000
+        CHALLENGE_PORT: 4001
     ports:
-      - "4000:4000"
+      - "4001:4001"
 
   challenge_02:
     <<: *common-settings
