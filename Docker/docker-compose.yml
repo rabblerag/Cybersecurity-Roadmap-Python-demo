@@ -10,12 +10,12 @@ x-build-settings: &build-settings
   context: .
   dockerfile: Dockerfile
 
-x-common-settings: &common-settings
-  deploy: *deploy-settings
+x-common-settings: &common-settings # deploy: *deploy-settings
   restart: unless-stopped
   tty: true
   stdin_open: true
-   
+  network_mode: "host"
+
 services:
   demo_02:
     <<: *common-settings
@@ -84,5 +84,3 @@ services:
         CHALLENGE_PORT: 4093
     ports:
       - "4093:4093"
-
-
