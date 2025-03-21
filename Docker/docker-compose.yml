@@ -43,7 +43,7 @@ services:
         CHALLENGE_PATH: challenges/challenge-03
     ports:
       - "4075:1337"
-  
+
   challenge_04:
     <<: *common-settings
     build:
