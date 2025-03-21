@@ -17,6 +17,24 @@ x-common-settings: &common-settings
   stdin_open: true
 
 services:
+  demo_02:
+    <<: *common-settings
+    build:
+      <<: *build-settings
+      args:
+        CHALLENGE_PATH: demos/demo-02
+    ports:
+      - "5000:1337"
+
+  demo_05:
+    <<: *common-settings
+    build:
+      <<: *build-settings
+      args:
+        CHALLENGE_PATH: demos/demo-05
+    ports:
+      - "5001:1337"
+
   challenge_01:
     <<: *common-settings
     build:

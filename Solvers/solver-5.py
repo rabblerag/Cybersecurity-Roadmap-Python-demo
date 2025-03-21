@@ -1,6 +1,5 @@
 from pwn import *
 from string import ascii_lowercase
-from base64 import b64decode as b64dec
 context.log_level = 'debug'
 
 chall = remote('localhost', 4093)
@@ -8,7 +7,7 @@ chall = remote('localhost', 4093)
 chall.recvline()
 chall.recvline()
 
-dec = b64dec(chall.recvline().strip()).decode()
+dec = b64d(chall.recvline().strip()).decode()
 print(dec)
 
 flag = ''
