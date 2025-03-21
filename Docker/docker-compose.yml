@@ -15,7 +15,7 @@ x-common-settings: &common-settings
   restart: unless-stopped
   tty: true
   stdin_open: true
-
+   
 services:
   demo_02:
     <<: *common-settings
@@ -41,8 +41,9 @@ services:
       <<: *build-settings
       args:
         CHALLENGE_PATH: challenges/challenge-01
+        CHALLENGE_PORT: 4000
     ports:
-      - "4000:1337"
+      - "4000:4000"
 
   challenge_02:
     <<: *common-settings
@@ -50,8 +51,9 @@ services:
       <<: *build-settings
       args:
         CHALLENGE_PATH: challenges/challenge-02
+        CHALLENGE_PORT: 4012
     ports:
-      - "4012:1337"
+      - "4012:4012"
 
   challenge_03:
     <<: *common-settings
@@ -59,8 +61,9 @@ services:
       <<: *build-settings
       args:
         CHALLENGE_PATH: challenges/challenge-03
+        CHALLENGE_PORT: 4075
     ports:
-      - "4075:1337"
+      - "4075:4075"
 
   challenge_04:
     <<: *common-settings
@@ -68,8 +71,9 @@ services:
       <<: *build-settings
       args:
         CHALLENGE_PATH: challenges/challenge-04
+        CHALLENGE_PORT: 4034
     ports:
-      - "4034:1337"
+      - "4034:4034"
 
   challenge_05:
     <<: *common-settings
@@ -77,5 +81,8 @@ services:
       <<: *build-settings
       args:
         CHALLENGE_PATH: challenges/challenge-05
+        CHALLENGE_PORT: 4093
     ports:
-      - "4093:1337"
+      - "4093:4093"
+
+
