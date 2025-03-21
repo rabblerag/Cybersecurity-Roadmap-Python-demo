@@ -24,7 +24,7 @@ services:
       args:
         CHALLENGE_PATH: demos/demo-02
     ports:
-      - "5000:1337"
+      - "5000:5000"
 
   demo_05:
     <<: *common-settings
@@ -33,7 +33,7 @@ services:
       args:
         CHALLENGE_PATH: demos/demo-05
     ports:
-      - "5001:1337"
+      - "5001:5001"
 
   challenge_01:
     <<: *common-settings
