@@ -1,6 +1,5 @@
 from pathlib import Path
 from base64 import b64encode as b64enc
-import sys
 
 
 class Challenge:
@@ -15,6 +14,9 @@ class Challenge:
         self.challenge()
 
     def challenge(self):
+        '''
+        Fourth challenge: decode the instructions encoded with base64
+        '''
         print(b64enc(self.flag.encode()).decode())
         if input().strip() == self.flag:
             print("Correct! Move to stage 5")
@@ -22,6 +24,9 @@ class Challenge:
             print("Wrong! Are you sure you decoded the instructions correctly?")
 
     def open_flag(self):
+        '''
+        Helper function to read the flag
+        '''
         with open(Path(self.path, "flag.txt")) as file:
             self.flag = file.read()
 

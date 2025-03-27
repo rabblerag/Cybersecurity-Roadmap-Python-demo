@@ -1,5 +1,4 @@
 from pathlib import Path
-import sys
 
 
 class Challenge:
@@ -9,11 +8,17 @@ class Challenge:
 
 
     def main(self):
+        '''
+        First challenge: Get the flag by connecting to the docker
+        '''
         print("You cleared the first stage! Follow the instructions below to connect to the next stage.")
         print(self.flag)
         
 
     def open_flag(self):
+        '''
+        Helper function to read the flag
+        '''
         with open(Path(self.path, "flag.txt")) as file:
             self.flag = file.read()
 

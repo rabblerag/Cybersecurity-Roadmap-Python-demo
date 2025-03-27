@@ -1,7 +1,5 @@
 from pathlib import Path
 from random import choice
-from string import digits
-import sys
 
 
 class Challenge:
@@ -16,7 +14,11 @@ class Challenge:
         self.challenge(4)
 
     def challenge(self, pass_len):
-        alphabet = digits + "abcdef"
+        '''
+        Third challenge: brute-force the password made up of known characters
+        '''
+        
+        alphabet = "0123456789abcdef"
         password = "".join([choice(alphabet) for _ in range(pass_len)])
 
         while True:
@@ -30,6 +32,9 @@ class Challenge:
                 print("Wrong password!")
 
     def open_flag(self):
+        '''
+        Helper function to read the flag
+        '''
         with open(Path(self.path, "flag.txt")) as file:
             self.flag = file.read()
 

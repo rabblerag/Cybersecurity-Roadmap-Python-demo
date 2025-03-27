@@ -9,11 +9,13 @@ chall = remote("localhost", 4093)
 chall.recvline()
 chall.recvline()
 
+# First remove the base64 encoding
 dec = b64d(chall.recvline().strip()).decode()
 print(dec)
 
 flag = ""
 
+# Then decypher with ro13
 for c in dec:
     if c in ascii_lowercase:
         flag += chr(((ord(c) - ord("a") + 13) % 26) + ord("a"))

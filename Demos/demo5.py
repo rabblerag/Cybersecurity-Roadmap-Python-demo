@@ -5,4 +5,4 @@ demo = remote('localhost', 5001)
 
 encoded = demo.recvline().strip()
 
-print("Secret is:", xor(encoded, 0x42).decode())
+print("Secret is:", xor(encoded, 0x42).decode()) # helper function to xor bytearrays/ints 

@@ -1,7 +1,6 @@
 from pathlib import Path
 from base64 import b64encode as b64enc
 from string import ascii_lowercase
-import sys
 
 
 class Challenge:
@@ -18,6 +17,9 @@ class Challenge:
 
 
     def encrypt_flag(self):
+        '''
+        Helper function that decrypts the flag
+        '''
         encrypted = ''
         for c in self.flag:
             if c in ascii_lowercase:
@@ -31,19 +33,21 @@ class Challenge:
         
 
     def challenge(self):
+        '''
+        Fifth challenge: decrypt the flag!
+        '''
         enc = self.encrypt_flag()
         print(enc)
         if input().strip() == self.flag:
             print("The flag is correct! You have completed the challenge!")
         else:
             print("Wrong! Are you sure you decyphered the flag correctly?")
-        
-         
-                        
-        
 
 
     def open_flag(self):
+        '''
+        Helper function to read the flag
+        '''
         with open(Path(self.path, "flag.txt")) as file:
             self.flag = file.read()
 

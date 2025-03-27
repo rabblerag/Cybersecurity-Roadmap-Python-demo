@@ -1,7 +1,6 @@
 from pathlib import Path
 from random import randrange
 from signal import signal, SIGALRM, alarm
-import sys
 
 
 class TimeoutException(Exception):
@@ -26,6 +25,10 @@ class Challenge:
 
 
     def challenge(self):
+        '''
+        Second challenge: find the sum of 2 random numbers programmatically
+        '''
+        
         a = randrange(1e5, 1e6)
         b = randrange(1e5, 1e6)
         print("What is the result of", a, '+', b, "?")
@@ -39,6 +42,7 @@ class Challenge:
 
     def timedInput(self, timelimit):
         '''
+        Helper function that closes stdin after some time
         Source: https://stackoverflow.com/questions/76406020/python-user-input-to-wait-for-a-few-seconds-if-the-user-does-not-give-any-input
         '''
         def handler(*_):
@@ -55,6 +59,9 @@ class Challenge:
 
 
     def open_flag(self):
+        '''
+        Helper function to read the flag
+        '''
         with open(Path(self.path, "flag.txt")) as file:
             self.flag = file.read()
 

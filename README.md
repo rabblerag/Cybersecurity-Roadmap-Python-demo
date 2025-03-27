@@ -19,7 +19,7 @@ docker-compose -f Docker/docker-compose.yml up --build -d
 
 You can find more information about docker inside the ./Docker/README.md file.
 
-## Challenge Ports :
+## Challenge Ports
 
 The challenges start from the port 4000.
 
